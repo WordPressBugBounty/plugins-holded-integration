@@ -31,13 +31,7 @@ class UpdateStockEndpoint extends AbstractEndpoint
                 'stock' => [
                     'required'          => true,
                     'validate_callback' => function ($param, $request, $key) {
-                        if (is_numeric($param)) {
-                            if ($param >= 0) {
-                                return true;
-                            }
-                        }
-
-                        return false;
+                        return is_numeric($param);
                     },
                 ],
             ],

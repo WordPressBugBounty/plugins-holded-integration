@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1a65620b38b2cb08c678a608e0738bf7
+class ComposerStaticInit876fbd7ce24de1e4582678222a4b9653
 {
     public static $files = array (
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
@@ -121,6 +121,7 @@ class ComposerStaticInit1a65620b38b2cb08c678a608e0738bf7
         'Holded\\Woocommerce\\Services\\ShopService' => __DIR__ . '/../..' . '/src/Services/ShopService.php',
         'Holded\\Woocommerce\\Views\\ConfigPanel' => __DIR__ . '/../..' . '/src/Views/ConfigPanel.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
@@ -196,6 +197,7 @@ class ComposerStaticInit1a65620b38b2cb08c678a608e0738bf7
         'Symfony\\Contracts\\Service\\Test\\ServiceLocatorTest' => __DIR__ . '/..' . '/symfony/service-contracts/Test/ServiceLocatorTest.php',
         'Symfony\\Polyfill\\Php73\\Php73' => __DIR__ . '/..' . '/symfony/polyfill-php73/Php73.php',
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
+        'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
@@ -203,9 +205,9 @@ class ComposerStaticInit1a65620b38b2cb08c678a608e0738bf7
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1a65620b38b2cb08c678a608e0738bf7::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1a65620b38b2cb08c678a608e0738bf7::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit1a65620b38b2cb08c678a608e0738bf7::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit876fbd7ce24de1e4582678222a4b9653::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit876fbd7ce24de1e4582678222a4b9653::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit876fbd7ce24de1e4582678222a4b9653::$classMap;
 
         }, null, ClassLoader::class);
     }

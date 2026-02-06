@@ -485,7 +485,7 @@ class ConfigPanel extends \WC_Integration
             wp_send_json($response);
         }
 
-        //Get period
+        // Get period
         $period = null;
         if (isset($_POST['period'])) {
             $period_post = (int) sanitize_key($_POST['period']);
@@ -513,17 +513,17 @@ class ConfigPanel extends \WC_Integration
                 $perioddatetmpend = strtotime('31-12-'.$year);
                 break;
             case 5:
-                //Previous Year
+                // Previous Year
                 $perioddatetmpstart = strtotime('01-01-'.($year - 1));
                 $perioddatetmpend = strtotime('31-12-'.($year - 1));
                 break;
             default:
-                $perioddatetmpstart = strtotime('01-01-'.($year));
-                $perioddatetmpend = strtotime('31-12-'.($year));
+                $perioddatetmpstart = strtotime('01-01-'.$year);
+                $perioddatetmpend = strtotime('31-12-'.$year);
                 break;
         }
 
-        //Get completed orders in this period of time.
+        // Get completed orders in this period of time.
         $args = [
             'status'         => 'completed',
             'type'           => 'shop_order',

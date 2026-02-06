@@ -29,7 +29,7 @@ final class ProductAdapter
 
         $baseCountry = (new \WC_Countries())->get_base_country();
 
-        //Get taxes of the product
+        // Get taxes of the product
         $taxes = [];
         if (wc_tax_enabled() && get_option('woocommerce_tax_based_on') === 'base') {
             // 'base' is the way of woocommerce to say 'Main business address'
@@ -142,8 +142,8 @@ final class ProductAdapter
     {
         $plugin = 'cost-of-goods-for-woocommerce/cost-of-goods-for-woocommerce.php';
         if (
-            !in_array($plugin, (array) get_option('active_plugins', []), true) ||
-            !class_exists('Alg_WC_Cost_of_Goods_Products')
+            !in_array($plugin, (array) get_option('active_plugins', []), true)
+            || !class_exists('Alg_WC_Cost_of_Goods_Products')
         ) {
             return null;
         }

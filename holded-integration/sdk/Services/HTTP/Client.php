@@ -29,7 +29,7 @@ class Client
         string $apikey,
         ?string $url = null
     ) {
-        //$holdedUrl = getenv('HOLDED_URL');
+        // $holdedUrl = getenv('HOLDED_URL');
         $this->holdedUrl = ($url) ? $url : self::DEFAULT_HOLDED_URL;
 
         $this->apikey = $apikey;
@@ -38,9 +38,9 @@ class Client
     }
 
     /**
-     * @param mixed[]|\JsonSerializable $extra
+     * @param array<mixed>|\JsonSerializable $extra
      *
-     * @return mixed
+     * @return array<mixed>|bool
      */
     public function call(string $url, $extra = [], string $type = 'GET', bool $callToOldApi = false)
     {
@@ -99,11 +99,11 @@ class Client
     }
 
     /**
-     * @param string                    $url
-     * @param mixed[]|\JsonSerializable $extra
-     * @param bool                      $oldApi
+     * @param array<mixed> $extra
+     * @param string       $url
+     * @param bool         $oldApi
      *
-     * @return mixed[]
+     * @return array<mixed>|bool
      */
     public function post($url, $extra = [], $oldApi = true)
     {

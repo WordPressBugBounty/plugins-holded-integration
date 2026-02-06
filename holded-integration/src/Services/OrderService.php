@@ -24,11 +24,11 @@ class OrderService extends AbstractService
                 $this->holdedSDK->syncOrder($order);
 
             // TODO: Implement async calls to the plugin in order to save this ID
-                //if (is_string($result)) {
-                //    update_post_meta($orderId, '_holdedwc_invoice_id', $result);
-                //
-                //    $result = true;
-                //}
+            // if (is_string($result)) {
+            //    update_post_meta($orderId, '_holdedwc_invoice_id', $result);
+            //
+            //    $result = true;
+            // }
             } else {
                 $this->holdedSDK->syncOrder($order);
             }
