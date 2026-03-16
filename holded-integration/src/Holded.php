@@ -11,7 +11,7 @@ use Holded\Woocommerce\Services\Admin;
  */
 class Holded
 {
-    private const VERSION_NUMBER = '3.5.2-%s';
+    private const VERSION_NUMBER = '3.5.3-%s';
 
     /** @var string */
     public $version = '';

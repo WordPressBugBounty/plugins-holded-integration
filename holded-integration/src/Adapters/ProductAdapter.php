@@ -70,7 +70,7 @@ final class ProductAdapter
         $product->description = $productData['description'];
         $product->taxes = $taxes;
         $product->price = self::getPriceFromObject($woocommerceProduct);
-        $product->barcode = $productData['barcode'] ?? '';
+        $product->barcode = self::getBarcode($woocommerceProduct);
         $product->sku = trim($productData['sku']);
         $product->weight = $productData['weight'];
         $product->stock = $woocommerceProduct->get_stock_quantity();
@@ -85,14 +85,13 @@ final class ProductAdapter
 
         if ($productType === 'variable' && $woocommerceProduct instanceof \WC_Product_Variable) {
             $product->kind = 'variants';
-            $product->variants = array_map(function (array $attributeCombination) use ($productId) {
-                $variationId = $attributeCombination['variation_id'];
+            $product->variants = array_map(function (int $variationId) use ($productId) {
                 $variationObj = new \WC_Product_Variation($variationId);
                 $stock = $variationObj->get_stock_quantity();
 
                 $variation = new Variation();
-                $variation->barcode = $attributeCombination['barcode'] ?? '';
-                $variation->sku = trim($attributeCombination['sku']);
+                $variation->barcode = self::getBarcode($variationObj);
+                $variation->sku = trim($variationObj->get_sku());
                 $variation->price = self::getPriceFromObject($variationObj);
                 $variation->stock = ($variationObj->get_manage_stock()) ? $stock : 0;
 
@@ -112,7 +111,7 @@ final class ProductAdapter
                 $variation->cost = self::getCost($variationId);
 
                 return $variation;
-            }, $woocommerceProduct->get_available_variations());
+            }, $woocommerceProduct->get_children());
         }
 
         $product->options = [];
@@ -151,5 +150,19 @@ final class ProductAdapter
         $cost = (new \Alg_WC_Cost_of_Goods_Products())->get_product_cost($id);
 
         return is_numeric($cost) ? (string) $cost : null;
+    }
+
+    /**
+     * @param \WC_Product|\WC_Product_Variation $product
+     */
+    private static function getBarcode($product): string
+    {
+        $barcode = $product->get_data()['barcode'] ?? null;
+
+        if ($barcode === null && method_exists($product, 'get_global_unique_id')) {
+            $barcode = $product->get_global_unique_id();
+        }
+
+        return (string) ($barcode ?? '');
     }
 }

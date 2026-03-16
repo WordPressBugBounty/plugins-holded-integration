@@ -3,7 +3,7 @@
         'name' => 'holded/woocommerce-plugin',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '7ff8174e3a482723d51c3794eef5baa92fbcf7a6',
+        'reference' => '70f5b1c432513baa82abb386be075ad583bb6d81',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'holded/woocommerce-plugin' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '7ff8174e3a482723d51c3794eef5baa92fbcf7a6',
+            'reference' => '70f5b1c432513baa82abb386be075ad583bb6d81',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

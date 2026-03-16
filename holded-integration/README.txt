@@ -72,6 +72,9 @@ A quick way to know if a product SKU is related is to create a Holded Document a
 
 == Changelog ==
 
+= 3.5.3 =
+* Sync all the variations of a product and add support for barcodes
+
 = 3.5.2 =
 * Fix compatibility with php versions
 
