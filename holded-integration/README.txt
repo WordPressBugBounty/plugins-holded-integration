@@ -2,10 +2,10 @@
 Contributors: holded
 Tags: woocommerce, erp, holded
 Requires at least: 4.9
-Tested up to: 6.8.1
+Tested up to: 6.9.3
 Stable tag: 1.2
 WC requires at least: 3.0
-WC tested up to: 6.8.1
+WC tested up to: 6.9.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -71,6 +71,9 @@ A quick way to know if a product SKU is related is to create a Holded Document a
 7. Sales invoices
 
 == Changelog ==
+
+= 3.5.4 =
+* Fix compatibility with PHP 8.4
 
 = 3.5.3 =
 * Sync all the variations of a product and add support for barcodes

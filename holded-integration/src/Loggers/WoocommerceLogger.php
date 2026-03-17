@@ -8,63 +8,63 @@ use Psr\Log\LoggerInterface;
 
 final class WoocommerceLogger implements LoggerInterface
 {
-    public function emergency($message, array $context = [])
+    public function emergency($message, array $context = []): void
     {
         $context['severity'] = 'EMERGENCY';
 
         $this->log(3, $message, $context);
     }
 
-    public function alert($message, array $context = [])
+    public function alert($message, array $context = []): void
     {
         $context['severity'] = 'ALERT';
 
         $this->log(3, $message, $context);
     }
 
-    public function critical($message, array $context = [])
+    public function critical($message, array $context = []): void
     {
         $context['severity'] = 'CRITICAL';
 
         $this->log(3, $message, $context);
     }
 
-    public function error($message, array $context = [])
+    public function error($message, array $context = []): void
     {
         $context['severity'] = 'ERROR';
 
         $this->log(3, $message, $context);
     }
 
-    public function warning($message, array $context = [])
+    public function warning($message, array $context = []): void
     {
         $context['severity'] = 'WARNING';
 
         $this->log(2, $message, $context);
     }
 
-    public function notice($message, array $context = [])
+    public function notice($message, array $context = []): void
     {
         $context['severity'] = 'NOTICE';
 
         $this->log(1, $message, $context);
     }
 
-    public function info($message, array $context = [])
+    public function info($message, array $context = []): void
     {
         $context['severity'] = 'INFO';
 
         $this->log(1, $message, $context);
     }
 
-    public function debug($message, array $context = [])
+    public function debug($message, array $context = []): void
     {
         $context['severity'] = 'DEBUG';
 
         $this->log(1, $message, $context);
     }
 
-    public function log($level, $message, array $context = [])
+    public function log($level, $message, array $context = []): void
     {
         $message = $this->addSeverityToMessage($context['severity'] ?? 'LOG', $message);
         $message = $this->addContextToMessage($message, $context);

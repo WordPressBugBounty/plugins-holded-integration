@@ -3,11 +3,11 @@
  * Plugin Name:         Holded integration
  * Plugin URI:          https://www.holded.com/integrations/woocommerce
  * Description:         Holded service integration with WooCommerce
- * Version:             3.5.3
+ * Version:             3.5.4
  * Requires at least:   4.9
  * Requires PHP:        7.4
  * WC requires at least: 3.0
- * WC tested up to:     6.8.1
+ * WC tested up to:     6.9.3
  * Author:              Holded
  * Author URI:          https://www.holded.com
  * License:             GPL v2 or later
