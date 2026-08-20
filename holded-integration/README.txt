@@ -72,6 +72,9 @@ A quick way to know if a product SKU is related is to create a Holded Document a
 
 == Changelog ==
 
+= 3.5.5 =
+* Fix product cost not syncing after "Cost of Goods for WooCommerce" plugin renamed its classes to the WPFCOGS_ prefix.
+
 = 3.5.4 =
 * Fix compatibility with PHP 8.4
 

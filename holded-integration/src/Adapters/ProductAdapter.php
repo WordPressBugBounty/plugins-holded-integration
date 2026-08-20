@@ -140,14 +140,17 @@ final class ProductAdapter
     private static function getCost($id)
     {
         $plugin = 'cost-of-goods-for-woocommerce/cost-of-goods-for-woocommerce.php';
-        if (
-            !in_array($plugin, (array) get_option('active_plugins', []), true)
-            || !class_exists('Alg_WC_Cost_of_Goods_Products')
-        ) {
+        if (!in_array($plugin, (array) get_option('active_plugins', []), true)) {
             return null;
         }
 
-        $cost = (new \Alg_WC_Cost_of_Goods_Products())->get_product_cost($id);
+        if (class_exists('WPFCOGS_Products')) {
+            $cost = (new \WPFCOGS_Products())->get_product_cost($id);
+        } elseif (class_exists('Alg_WC_Cost_of_Goods_Products')) {
+            $cost = (new \Alg_WC_Cost_of_Goods_Products())->get_product_cost($id);
+        } else {
+            return null;
+        }
 
         return is_numeric($cost) ? (string) $cost : null;
     }
